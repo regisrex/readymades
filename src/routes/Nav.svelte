@@ -7,19 +7,19 @@
 	let navLinks = [
 		{
 			title: 'Products',
-			url: '/products'
+			url: '#'
 		},
 		{
 			title: 'Orders',
-			url: '/orders'
+			url: '#'
 		},
 		{
 			title: 'About us',
-			url: '/about-us'
+			url: '#'
 		},
 		{
 			title: 'Contact us',
-			url: 'contact-us'
+			url: '#'
 		}
 	];
 </script>
