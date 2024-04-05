@@ -9,3 +9,7 @@ export function ApiResponse<T>(status: number, success: boolean, message: string
         error
     })
 }
+
+export function errorHandler(error: Error | any) {
+    return ApiResponse(401, false, 'Something went wrong', null, error.message)
+}
