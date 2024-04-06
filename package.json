@@ -34,11 +34,13 @@
 	"type": "module",
 	"dependencies": {
 		"@prisma/client": "^5.12.1",
+		"axios": "^1.6.8",
 		"bcrypt": "^5.1.1",
 		"cloudinary": "^2.1.0",
 		"dotenv": "^16.4.5",
 		"jsonwebtoken": "^9.0.2",
 		"prisma": "^5.12.1",
+		"svelte-french-toast": "^1.2.0",
 		"svelte-hero-icons": "^5.1.0",
 		"zod": "^3.22.4"
 	}

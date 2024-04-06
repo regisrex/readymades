@@ -1,3 +1,3 @@
 <div>
-	<span class="font-black uppercase text-black">Ready<span class="text-brand">Made</span>.rw</span>
+	<span class="font-black uppercase text-black">Ready<span class="text-brand">Made</span>.com</span>
 </div>

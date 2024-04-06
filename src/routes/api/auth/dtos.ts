@@ -6,7 +6,5 @@ export interface ISignupDTO {
 }
 export interface ILoginDTO {
     email: string
-    fullname: string
     password: string
-    confirm_password: string
 }
