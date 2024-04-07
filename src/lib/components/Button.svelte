@@ -10,7 +10,7 @@
 
 <button
 	on:click={onclick}
-	class="h-[50px] px-6 duration-100 rounded-full flex items-center justify-center gap-2 min-w-36 {variant ==
+	class="h-[40px] px-6 duration-100 rounded-lg flex items-center justify-center gap-2 min-w-36 {variant ==
 	'primary'
 		? 'bg-brand text-white hover:bg-black'
 		: variant == 'secondary'

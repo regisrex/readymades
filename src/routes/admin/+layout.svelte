@@ -5,7 +5,7 @@
 	import { Toaster } from 'svelte-french-toast';
 
 	onMount(() => {
-		if ($page.url.href.includes('auth'))
+		if ($page.url.href.includes('login'))
 			if (localStorage.getItem('token')) {
 				goto('/admin/0/analytics');
 			}

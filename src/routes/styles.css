@@ -12,3 +12,7 @@
 .font-fraunces {
 	font-family: Fraunces, serif;
 }
+
+select {
+	appearance: none;
+}

@@ -1,5 +1,4 @@
 import axios, { type AxiosInstance } from 'axios';
-
 let api: AxiosInstance;
 
 if (typeof window !== 'undefined' && window.localStorage) {
@@ -16,5 +15,11 @@ if (typeof window !== 'undefined' && window.localStorage) {
         baseURL: "/api"
     });
 }
+
+
+
+// api.interceptors.response.use(function (response) {
+//     return response.data 
+// })
 
 export default api;

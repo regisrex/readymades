@@ -5,9 +5,13 @@ declare global {
 		// interface Error {}
 		// interface Locals {}
 		// interface PageData {}
-		// interface PageState {}
+		interface PageState {
+			showAddProductModal?: boolean
+			showAddCategoryModal?: boolean
+		}
 		// interface Platform {}
 	}
 }
 
-export {};
+export { };
+

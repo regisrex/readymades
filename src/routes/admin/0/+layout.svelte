@@ -1,10 +1,9 @@
 <script>
-	import { CubeTransparent, Icon } from 'svelte-hero-icons';
 	const links = [
-		{
-			title: 'Analytics',
-			href: '/admin/0/products'
-		},
+		// {
+		// 	title: 'Analytics',
+		// 	href: '/admin/0/products'
+		// },
 		{
 			title: 'Producuts',
 			href: '/admin/0/products'
@@ -21,10 +20,10 @@
 </script>
 
 <div class="min-h-screen p-12 flex">
-	<div class="w-fit flex flex-col pr-6 border-r border-slate-200">
-		<!-- <Logo /> -->
+	<!-- <div class="w-fit flex flex-col pr-6 border-r border-slate-200"> -->
+	<!-- <Logo /> -->
 
-		<div class="flex flex-col gap-0">
+	<!-- <div class="flex flex-col gap-0c">
 			{#each links as link}
 				<a
 					href={link.href}
@@ -34,9 +33,9 @@
 					<span> {link.title}</span>
 				</a>
 			{/each}
-		</div>
-	</div>
-	<div class="col-span-3 px-6">
+		</div> -->
+	<!-- </div> -->
+	<div class="col-span-3 px-6 w-full">
 		<slot />
 	</div>
 </div>

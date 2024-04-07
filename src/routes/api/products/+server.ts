@@ -1,6 +1,7 @@
 import { ApiResponse, errorHandler } from "$lib/server/apiResponse";
 import { prisma } from "$lib/server/database";
 import { type Product } from "@prisma/client";
+import { deleteFile } from "../files/utils";
 import type { RequestEvent } from "./$types";
 import { productSchema, updateProductSchema, type IProduct } from "./dtos";
 
@@ -10,13 +11,32 @@ export async function GET(event: RequestEvent) {
         const productId = new URL(event.request.url).searchParams.get("productId")
         if (productId) {
             const product = await prisma.product.findUnique({
-                where: { id: productId }
+                where: { id: productId },
+                include: {
+                    category: {
+                        select: {
+                            id: true,
+                            title: true,
+                            description: true
+                        }
+                    }
+                }
             })
             if (!product) throw new Error("Product not found")
             return ApiResponse(200, true, 'Product fetched', product)
         }
 
-        const products = await prisma.product.findMany()
+        const products = await prisma.product.findMany({
+            include: {
+                category: {
+                    select: {
+                        id: true,
+                        title: true,
+                        description: true
+                    }
+                }
+            }
+        })
         return ApiResponse(200, true, "Products fetched", products)
 
     } catch (error) {
@@ -25,9 +45,9 @@ export async function GET(event: RequestEvent) {
 }
 
 export async function POST(event: RequestEvent) {
+    const data: IProduct = productSchema.parse(await event.request.json())
     try {
 
-        const data: IProduct = productSchema.parse(await event.request.json())
         const product = await prisma.product.create({
             data: {
                 ...data,
@@ -44,6 +64,7 @@ export async function POST(event: RequestEvent) {
         return ApiResponse<Product>(200, true, 'Product Added', product)
 
     } catch (error: any) {
+        deleteFile(data.image)
         return errorHandler(error)
     }
 }
