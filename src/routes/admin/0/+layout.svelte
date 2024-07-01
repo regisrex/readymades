@@ -1,4 +1,7 @@
 <script>
+	import Logo from '$lib/components/Logo.svelte';
+	import { Icon, CubeTransparent } from 'svelte-hero-icons';
+
 	const links = [
 		// {
 		// 	title: 'Analytics',
@@ -20,10 +23,9 @@
 </script>
 
 <div class="min-h-screen p-12 flex">
-	<!-- <div class="w-fit flex flex-col pr-6 border-r border-slate-200"> -->
-	<!-- <Logo /> -->
-
-	<!-- <div class="flex flex-col gap-0c">
+	<div class=" flex flex-col pr-6 border-r border-slate-200">
+		<Logo />
+		<div class="flex flex-col gap-0c">
 			{#each links as link}
 				<a
 					href={link.href}
@@ -33,8 +35,8 @@
 					<span> {link.title}</span>
 				</a>
 			{/each}
-		</div> -->
-	<!-- </div> -->
+		</div>
+	</div>
 	<div class="col-span-3 px-6 w-full">
 		<slot />
 	</div>
